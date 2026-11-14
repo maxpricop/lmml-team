@@ -4,8 +4,8 @@ from sklearn.tree import DecisionTreeClassifier
 import pandas as pd
 
 test_mode = Path("test-input.csv").is_file()
-input_file = "data/test-input.csv" if test_mode else "data/train-input.csv"
-output_file = "data/test-output.txt" if test_mode else "data/train-output.txt"
+input_file = "test-input.csv" if test_mode else "data/train-input.csv"
+output_file = "test-output.txt" if test_mode else "data/train-output.txt"
 
 input = pd.read_csv(input_file)
 X = input.drop(columns="slab_released")
