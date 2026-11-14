@@ -26,6 +26,7 @@ Download each task's data from its platform page and put it in the location spec
 | Twins Separated at Birth | Asia | India | [twins-separated-at-birth](twins-separated-at-birth/README.md) | Passed (F1 >= 0.88 on the hidden test); local training F1 0.962 | Not recorded |
 | Bad BOMB | Asia | Laos | [bad-bomb](bad-bomb/README.md) | Passed: 20/28 defects matched (accuracy 0.714, 0.70 needed) | Not recorded |
 | Please, You Are So Delusional! | Africa | Tanzania | [please-you-are-so-delusional](please-you-are-so-delusional/README.md) | Passed (100 pts): `SIGMOID_A69EE28C5B2214A9AD99` | Not recorded |
+| The Gángan Never Lies | Africa | Nigeria | [the-gangan-never-lies](the-gangan-never-lies/README.md) | Flag identified: `SIGMOID_TALKINGDRUM`; platform result not recorded | Not recorded |
 
 The Fry-ndship [notebook](fry-ndship/solve.ipynb) contains the accepted model and its saved numerical output. We tried two model specifications: long and estimated short sides alone revealed REGRESSION, which the platform rejected; adding declared ditch length revealed SUPERVISION, which the platform accepted. The [residual plot](fry-ndship/figures/residuals.png) shows SUPERVISION. Its [task README](fry-ndship/README.md) records both attempts, the accepted result, dependencies, and reproduction steps. The exact submission time and submitted commit link have not been recorded here.
 
@@ -50,6 +51,8 @@ The Twins Separated at Birth [script](twins-separated-at-birth/main.py) finds pa
 The Bad BOMB [notebook](bad-bomb/solve.ipynb) finds 28 defective artillery shells among 1,225 unlabelled photos with PatchCore-style anomaly detection: a frozen WideResNet-50 describes every patch, only patches on the shell are scored against the 40 most similar photos, and the top of the ranking was reviewed by eye. The platform matched 20 of the 28 (accuracy 0.714, 0.70 needed). The [task README](bad-bomb/README.md) records the attempts, the defect types and reproduction steps.
 
 The Please, You Are So Delusional! [pipeline](please-you-are-so-delusional/retrieval_pipeline.py) repairs a broken retrieval pipeline: one embedding model for both questions and documents (the starter mixed two), paragraph chunks instead of fixed 180-character slices, and archived notices excluded. All 72 questions then retrieve their current access notice, which gives `SIGMOID_A69EE28C5B2214A9AD99`; the platform accepted it (100 pts). The [task README](please-you-are-so-delusional/README.md) records each fix and reproduction steps.
+
+The Gángan Never Lies [notebook](the-gangan-never-lies/solve.ipynb) draws the spectrogram (frequency over time) of a recording that sounds like a flat hiss. The saved [spectrogram](the-gangan-never-lies/figures/spectrogram.png) shows the word TALKINGDRUM written on top of the noise, which gives `SIGMOID_TALKINGDRUM`. It needs `scipy` in addition to `requirements.txt`. The [task README](the-gangan-never-lies/README.md) explains why the word is visible and records reproduction steps; platform acceptance is not recorded.
 
 ## Team rules
 
