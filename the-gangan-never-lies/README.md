@@ -6,7 +6,7 @@
 - **Points available:** 100
 - **Answer type:** Flag, supported by a notebook and a figure
 - **Flag:** `SIGMOID_TALKINGDRUM`
-- **Platform status:** not recorded
+- **Platform status:** Passed (100 pts)
 
 ## Statement
 
@@ -77,6 +77,6 @@ The spectrogram was the first thing we tried and nothing else was needed. If it 
 ## Result
 
 - **Observed word:** TALKINGDRUM
-- **Flag:** `SIGMOID_TALKINGDRUM`
-- **Submitted:** not recorded
-- **Commit:** not recorded
+- **Flag:** `SIGMOID_TALKINGDRUM`, accepted by the platform (100 pts)
+- **Submission time:** not recorded
+- **Commit:** [b2d3b29](https://github.com/maxpricop/lmml-team/commit/b2d3b29a4899166bd5f6bd0298f31cf4b4278403)
