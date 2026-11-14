@@ -1,23 +1,22 @@
 # LMML 2.0 — team solutions
 
-Solutions of our team for **LMML 2.0** (Sigmoid, 14–15 Nov 2026). One folder per task.
-Each task folder has a README that explains the approach and how to reproduce the result.
+Solutions of our team for **LMML 2.0** (Sigmoid, 14–15 Nov 2026). Each task represents a country within a continent. One folder per task. Each task folder has a README that explains the approach and how to reproduce the result.
 
 ## Reproduce
 
-```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate   Linux/macOS: source .venv/bin/activate
-pip install -r requirements.txt
-```
+Run notebooks with the working directory set to the repository root.
 
-Then follow the `README.md` inside the task folder. Task-specific dependencies are listed there.
+Each team member runs everything locally on their own machine. Install the packages in `requirements.txt` and the additional dependencies listed in the task README into your local Python environment, then select that environment as the notebook kernel.
+
+Download each task's data from its platform page and put it in the location specified by that task's README. Data files are not tracked in this repository. Open the notebook, restart its kernel, run all cells, and save the outputs.
 
 ## Tasks
 
-| Task | Territory | Folder | Status | Commit | Author(s) |
+| Task | Continent | Country | Folder | Status | Commit |
 |---|---|---|---|---|---|
-| | | | | | |
+| Fry-ndship | Europe | Belgium | [fry-ndship](fry-ndship/README.md) | Solved locally: `SIGMOID_REGRESSION` | Not recorded |
+
+The Fry-ndship [notebook](fry-ndship/solve.ipynb) contains the fitted model and its outputs. The [residual plot](fry-ndship/figures/residuals.png) shows the word. Its task README records the approach, dependencies, and reproduction steps. Submission time and a submitted commit link have not been recorded yet.
 
 ## Team rules
 
