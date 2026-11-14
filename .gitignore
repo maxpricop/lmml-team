@@ -1,0 +1,51 @@
+# environments
+.venv/
+venv/
+env/
+.python-version
+
+# secrets
+.env
+.env.*
+*.pem
+*.key
+
+# data, models, outputs (note in the task README where data comes from)
+data/
+*/data/
+outputs/
+*/outputs/
+runs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.joblib
+*.pkl
+*.npy
+*.npz
+*.parquet
+*.zip
+*.tar
+*.tar.gz
+*.7z
+wandb/
+mlruns/
+lightning_logs/
+.cache/
+
+# python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
