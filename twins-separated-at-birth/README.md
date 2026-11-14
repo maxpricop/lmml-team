@@ -5,7 +5,7 @@
 - **Difficulty:** Easy
 - **Points:** 100 for F1 >= 0.88; otherwise 0
 - **Answer type:** Evaluated Python file (`main.py`)
-- **Status:** `main.py` scores F1 0.962 on the training archive; not submitted yet
+- **Status:** Passed on the platform (F1 >= 0.88 on the hidden test); local training F1 0.962
 
 ## Statement
 
@@ -52,7 +52,7 @@ Any threshold from about 30 to 70 passes 0.88; 45 gave the best F1, in the middl
 ### Known limits
 
 - Most of the 58 wrong pairs are two versions of the same picture that the labels count as different photos (for example a sepia and a black-and-white print of the same old photograph, `img_000091.jpg` and `img_000103.jpg`).
-- The settings were chosen on the training data, so the hidden-test score may be a little lower.
+- The settings were chosen on the training data; the hidden test still passed, but its exact F1 is not shown by the platform.
 - There is no error handling: an unreadable image, or an image with fewer than 2 SIFT keypoints, would make the script crash. None of the 4,057 training images has either problem.
 
 ## Reproduce
@@ -113,7 +113,7 @@ All scores are on the training archive (4,057 images, 1,399 pairs).
 
 ## Result
 
-- Submission: pending (nothing submitted to the platform yet).
-- Flag: not obtained.
-- Commit: not recorded.
-- Hints bought: none recorded.
+- **Platform result:** passed (100 points).
+- **Flag:** not recorded yet.
+- **Submitted commit link:** not recorded yet.
+- **Hints bought:** none recorded.
