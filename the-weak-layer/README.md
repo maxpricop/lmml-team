@@ -35,5 +35,5 @@ Data: place the practice files `train-input.csv` and `train-output.txt` in the c
 
 ## Result
 
-- Submitted: Unrecorded.
-- Commit: Unrecorded.
+- Submitted: 11/14 18:54 Passed
+- Commit: [2d8e923](https://github.com/maxpricop/lmml-team/commit/2d8e923c0bc76c9f19173e2704ebf168e7533fc6).
