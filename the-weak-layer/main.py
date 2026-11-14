@@ -1,8 +1,13 @@
+from pathlib import Path
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 import pandas as pd
 
-input = pd.read_csv("train-input.csv")
+test_mode = Path("test-input.csv").is_file()
+input_file = "data/test-input.csv" if test_mode else "data/train-input.csv"
+output_file = "data/test-output.txt" if test_mode else "data/train-output.txt"
+
+input = pd.read_csv(input_file)
 X = input.drop(columns="slab_released")
 y = input["slab_released"]
 
@@ -26,6 +31,4 @@ while pending_nodes:
     pending_nodes.append(right)
     pending_nodes.append(left)
 
-with open("test-output.txt", "w") as f:
-    f.write(f"SIGMOID_{word.upper()}")
-    f.close()
+Path(output_file).write_text(f"SIGMOID_{word.upper()}")
