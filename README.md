@@ -20,6 +20,7 @@ Download each task's data from its platform page and put it in the location spec
 | Pipes, Leaks, and the Graph Beneath | Europe | Finland | [pipes-leaks-graph](pipes-leaks-graph/README.md) | Submitted: `SIGMOID_HOTLINE` | [a8a19ab](https://github.com/maxpricop/lmml-team/commit/a8a19ab1133025604e8f77d6ed215e4041e50e0d) |
 | What The Data? | Europe | Iceland | [what-the-data](what-the-data/README.md) | Practice verified: exact match; platform result not recorded | Not recorded |
 | The Weak Layer | Europe | Switzerland | [the-weak-layer](the-weak-layer/README.md) | Practice verified: exact match; platform result not recorded | Not recorded |
+| The Nisse's Bad Shift | Europe | Norway | [the-nisse-bad-shift](the-nisse-bad-shift/README.md) | Local repair F1 0.966. Platform result passed. | Not recorded |
 
 The Fry-ndship [notebook](fry-ndship/solve.ipynb) contains the accepted model and its saved numerical output. We tried two model specifications: long and estimated short sides alone revealed REGRESSION, which the platform rejected; adding declared ditch length revealed SUPERVISION, which the platform accepted. The [residual plot](fry-ndship/figures/residuals.png) shows SUPERVISION. Its [task README](fry-ndship/README.md) records both attempts, the accepted result, dependencies, and reproduction steps. The exact submission time and submitted commit link have not been recorded here.
 
@@ -32,6 +33,8 @@ The ¡Feliz Navidad! [notebook](feliz-navidad/solve.ipynb) reconstructs a 6 × 2
 The Looks like an anomaly! [detector](looks-like-an-anomaly/detector.py) scores streaming sensor anomalies using per-zone baselines and point, collective, and drift checks. Its [task README](looks-like-an-anomaly/README.md) records the submitted file, three local attempts, robustness checks, and reproduction steps. The final local training score is 96.71/100 with F1 0.968 and one false alarm; this is not a held-back evaluation or confirmation of platform acceptance.
 
 The Weak Layer trains a decision tree on labeled Swiss snow-pit observations and recovers a hidden word from the first letters of the split features in preorder. The practice table yields `SIGMOID_DEMO`. See the [task README](the-weak-layer/README.md) for reproduction steps.
+
+The Nisse's Bad Shift uses an SVC to find evidence of two-way label swaps in handwritten digits. The final rule fixes 28 of 30 wrong labels with zero incorrect changes in the local check. The [task README](the-nisse-bad-shift/README.md) records previous attempts and how to regenerate the CSV and retrained classifier.
 
 ## Team rules
 
