@@ -40,4 +40,4 @@ Restart the kernel and run all cells in [solve.ipynb](solve.ipynb). The final ce
 ## Result
 
 - Submitted: 11/14 23:28 Passed
-- Commit: Unrecorded.
+- Commit: [56285bf](https://github.com/maxpricop/lmml-team/commit/56285bffe3f87b81ec74d821863de84ffb44dabe).

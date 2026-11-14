@@ -15,12 +15,12 @@ Download each task's data from its platform page and put it in the location spec
 | Task | Continent | Country | Folder | Status | Commit |
 |---|---|---|---|---|---|
 | Fry-ndship | Europe | Belgium | [fry-ndship](fry-ndship/README.md) | Accepted: `SIGMOID_SUPERVISION` | Not recorded |
-| ¡Feliz Navidad! | Europe | Spain | [feliz-navidad](feliz-navidad/README.md) | Flag identified: `SIGMOID_CRUCIO`; platform result not recorded | Not recorded |
+| ¡Feliz Navidad! | Europe | Spain | [feliz-navidad](feliz-navidad/README.md) | Flag identified: `SIGMOID_CRUCIO`; platform result not recorded | [679752a](https://github.com/maxpricop/lmml-team/commit/679752ab6d26694076cfaa2d74964f4db0ab584a) |
 | Looks like an anomaly! | Europe | Albania | [looks-like-an-anomaly](looks-like-an-anomaly/README.md) | Submitted; local training score: 96.71/100; platform result not recorded | Not recorded |
 | Pipes, Leaks, and the Graph Beneath | Europe | Finland | [pipes-leaks-graph](pipes-leaks-graph/README.md) | Submitted: `SIGMOID_HOTLINE` | [a8a19ab](https://github.com/maxpricop/lmml-team/commit/a8a19ab1133025604e8f77d6ed215e4041e50e0d) |
 | What The Data? | Europe | Iceland | [what-the-data](what-the-data/README.md) | Practice verified: exact match; platform result not recorded | Not recorded |
-| The Weak Layer | Europe | Switzerland | [the-weak-layer](the-weak-layer/README.md) | Practice verified: exact match; platform result not recorded | Not recorded |
-| The Nisse's Bad Shift | Europe | Norway | [the-nisse-bad-shift](the-nisse-bad-shift/README.md) | Local repair F1 0.966. Platform result passed. | Not recorded |
+| The Weak Layer | Europe | Switzerland | [the-weak-layer](the-weak-layer/README.md) | Practice verified: exact match; platform result not recorded | [2d8e923](https://github.com/maxpricop/lmml-team/commit/2d8e923c0bc76c9f19173e2704ebf168e7533fc6) |
+| The Nisse's Bad Shift | Europe | Norway | [the-nisse-bad-shift](the-nisse-bad-shift/README.md) | Local repair F1 0.966. Platform result passed. | [56285bf](https://github.com/maxpricop/lmml-team/commit/56285bffe3f87b81ec74d821863de84ffb44dabe) |
 
 The Fry-ndship [notebook](fry-ndship/solve.ipynb) contains the accepted model and its saved numerical output. We tried two model specifications: long and estimated short sides alone revealed REGRESSION, which the platform rejected; adding declared ditch length revealed SUPERVISION, which the platform accepted. The [residual plot](fry-ndship/figures/residuals.png) shows SUPERVISION. Its [task README](fry-ndship/README.md) records both attempts, the accepted result, dependencies, and reproduction steps. The exact submission time and submitted commit link have not been recorded here.
 
