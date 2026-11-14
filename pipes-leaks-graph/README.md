@@ -74,4 +74,4 @@ Data: `routes.csv` from the task's Google Drive folder: https://drive.google.com
 ## Result
 
 - Submitted: `SIGMOID_HOTLINE`
-- Commit: <link>
+- Commit: https://github.com/maxpricop/lmml-team/commit/a8a19ab1133025604e8f77d6ed215e4041e50e0d
