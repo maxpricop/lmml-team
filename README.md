@@ -14,10 +14,10 @@ Download each task's data from its platform page and put it in the location spec
 
 | Task | Continent | Country | Folder | Status | Commit |
 |---|---|---|---|---|---|
-| Fry-ndship | Europe | Belgium | [fry-ndship](fry-ndship/README.md) | Solved locally: `SIGMOID_REGRESSION` | Not recorded |
+| Fry-ndship | Europe | Belgium | [fry-ndship](fry-ndship/README.md) | Accepted: `SIGMOID_SUPERVISION` | Not recorded |
 | Pipes, Leaks, and the Graph Beneath | Europe | Finland | [pipes-leaks-graph](pipes-leaks-graph/README.md) | Submitted: `SIGMOID_HOTLINE` | [a8a19ab](https://github.com/maxpricop/lmml-team/commit/a8a19ab1133025604e8f77d6ed215e4041e50e0d) |
 
-The Fry-ndship [notebook](fry-ndship/solve.ipynb) contains the fitted model and its outputs. The [residual plot](fry-ndship/figures/residuals.png) shows the word. Its task README records the approach, dependencies, and reproduction steps. Submission time and a submitted commit link have not been recorded yet.
+The Fry-ndship [notebook](fry-ndship/solve.ipynb) contains the accepted model and its saved numerical output. We tried two model specifications: long and estimated short sides alone revealed REGRESSION, which the platform rejected; adding declared ditch length revealed SUPERVISION, which the platform accepted. The [residual plot](fry-ndship/figures/residuals.png) shows SUPERVISION. Its [task README](fry-ndship/README.md) records both attempts, the accepted result, dependencies, and reproduction steps. The exact submission time and submitted commit link have not been recorded here.
 
 The Pipes, Leaks, and the Graph Beneath [notebook](pipes-leaks-graph/solve.ipynb) documents town-name cleanup, reconstruction of the route network, and the ranking by distinct connections. Its [task README](pipes-leaks-graph/README.md) records the submitted flag and the commit linked above.
 
