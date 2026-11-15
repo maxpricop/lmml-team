@@ -28,6 +28,7 @@ Download each task's data from its platform page and put it in the location spec
 | The Abidjan Transit Ledger | Africa | Côte d'Ivoire | [the-abidjan-transit-ledger](the-abidjan-transit-ledger/README.md) | Passed (200 pts); local validation: old task 1.00, new task 0.94–1.00 (0.85 needed on each) | [2c9af62](https://github.com/maxpricop/lmml-team/commit/2c9af62ed87bc8b6c0ed4fdd34cb8c95e545b234) |
 | Always Valid, No Excuses | Africa | Egypt | [always-valid-no-excuses1](always-valid-no-excuses1/README.md) | Passed (100 pts); local check: 100/100 cards valid | [32455d4](https://github.com/maxpricop/lmml-team/commit/32455d44f9961af92f204b117b4d0d5e790efe3b) |
 | The Gángan Never Lies | Africa | Nigeria | [the-gangan-never-lies](the-gangan-never-lies/README.md) | Passed (100 pts): `SIGMOID_TALKINGDRUM` | [b2d3b29](https://github.com/maxpricop/lmml-team/commit/b2d3b29a4899166bd5f6bd0298f31cf4b4278403) |
+| Walu Season | Oceania | Fiji | [walu-season](walu-season/README.md) | Practice pass (6,944.6 kg/day). Platform result unrecorded | Not recorded |
 
 Every task listed here passed on the platform with the maximum score, as confirmed by the team on 15 November 2026.
 
@@ -58,6 +59,8 @@ The Abidjan Transit Ledger [script](the-abidjan-transit-ledger/main.py) recovers
 The Always Valid, No Excuses [script](always-valid-no-excuses1/main.py) turns OCR'd record cards into strictly valid JSON with a small local model (Qwen3-1.7B through llama.cpp). Python first drops the scan noise and keeps only real `key: value` fields; the model then writes the JSON under a grammar built per card, so invalid JSON, wrong keys and quoted numbers cannot be generated. Every answer is checked against the conversion rules and corrected on a mismatch, because 99/100 scores zero. A local check found all 100 test cards valid. It needs `huggingface-hub` and `llama-cpp-python` in its own environment. The [task README](always-valid-no-excuses1/README.md) records the attempts and reproduction steps. The submission passed on the platform.
 
 The Gángan Never Lies [notebook](the-gangan-never-lies/solve.ipynb) draws the spectrogram (frequency over time) of a recording that sounds like a flat hiss. The saved [spectrogram](the-gangan-never-lies/figures/spectrogram.png) shows the word TALKINGDRUM written on top of the noise, which gives `SIGMOID_TALKINGDRUM`. It needs `scipy` in addition to `requirements.txt`. The [task README](the-gangan-never-lies/README.md) explains why the word is visible and records reproduction steps. The platform accepted the flag.
+
+Walu Season [script](walu-season/main.py) treats ten fishing spots as a multi-armed bandit. The strategy adds an exploration bonus to each spot's average catch and scored 6,944.6 kg per day across 100 practice days, above the 5,300 kg threshold. See the [task README](walu-season/README.md) for reproduction steps.
 
 ## Team rules
 
