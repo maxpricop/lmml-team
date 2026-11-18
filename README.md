@@ -22,13 +22,13 @@ Download each task's data from its platform page and put it in the location spec
 | The Weak Layer | Europe | Switzerland | [the-weak-layer](the-weak-layer/README.md) | Passed (max score); practice output matched exactly | [2d8e923](https://github.com/maxpricop/lmml-team/commit/2d8e923c0bc76c9f19173e2704ebf168e7533fc6) |
 | The Nisse's Bad Shift | Europe | Norway | [the-nisse-bad-shift](the-nisse-bad-shift/README.md) | Passed (max score); local repair F1 0.966 | [56285bf](https://github.com/maxpricop/lmml-team/commit/56285bffe3f87b81ec74d821863de84ffb44dabe) |
 | Call My BLEUff | Europe | United Kingdom | [call-my-bleuff](call-my-bleuff/README.md) | Passed (200 pts): `SIGMOID_FRINDLOW` | Not recorded |
-| Point par point | Europe | France | [point-par-point](point-par-point/solve.ipynb) (no README yet) | Passed (max score): `SIGMOID_ANOURE` | Not recorded |
 | Twins Separated at Birth | Asia | India | [twins-separated-at-birth](twins-separated-at-birth/README.md) | Passed (100 pts, F1 >= 0.88 on the hidden test); local training F1 0.962 | Not recorded |
 | Bad BOMB | Asia | Laos | [bad-bomb](bad-bomb/README.md) | Passed (200 pts): 20/28 defects matched (accuracy 0.714, 0.70 needed) | Not recorded |
 | Please, You Are So Delusional! | Africa | Tanzania | [please-you-are-so-delusional](please-you-are-so-delusional/README.md) | Passed (100 pts): `SIGMOID_A69EE28C5B2214A9AD99` | Not recorded |
 | The Abidjan Transit Ledger | Africa | Côte d'Ivoire | [the-abidjan-transit-ledger](the-abidjan-transit-ledger/README.md) | Passed (200 pts); local validation: old task 1.00, new task 0.94–1.00 (0.85 needed on each) | [2c9af62](https://github.com/maxpricop/lmml-team/commit/2c9af62ed87bc8b6c0ed4fdd34cb8c95e545b234) |
 | Always Valid, No Excuses | Africa | Egypt | [always-valid-no-excuses1](always-valid-no-excuses1/README.md) | Passed (100 pts); local check: 100/100 cards valid | [32455d4](https://github.com/maxpricop/lmml-team/commit/32455d44f9961af92f204b117b4d0d5e790efe3b) |
 | The Gángan Never Lies | Africa | Nigeria | [the-gangan-never-lies](the-gangan-never-lies/README.md) | Passed (100 pts): `SIGMOID_TALKINGDRUM` | [b2d3b29](https://github.com/maxpricop/lmml-team/commit/b2d3b29a4899166bd5f6bd0298f31cf4b4278403) |
+| Walu Season | Oceania | Fiji | [walu-season](walu-season/README.md) | Practice pass (6,944.6 kg/day). Platform result unrecorded | Not recorded |
 
 Every task listed here passed on the platform with the maximum score, as confirmed by the team on 15 November 2026.
 
@@ -48,8 +48,6 @@ The Nisse's Bad Shift uses an SVC to find evidence of two-way label swaps in han
 
 The Call My BLEUff [notebook](call-my-bleuff/solve.ipynb) shows how two bluffing panellists per round game BLEU (leaving facts out, word salad, padding) and replaces BLEU with a fact checklist. In all 24 rounds exactly one deck has no bluff cards; the honest seats spell FRINDLOW, while BLEU's own picks spell SKELDRAP. The platform accepted `SIGMOID_FRINDLOW`. The [task README](call-my-bleuff/README.md) records the evidence figure, what did not work, and reproduction steps.
 
-The Point par point [notebook](point-par-point/solve.ipynb) finds the letters an artist hid among 28,108 Paris rental listings: the fake listings form flat, dense sheets in the space of price, reviews, availability and location, HDBSCAN groups them into 6 letters, the letters are ordered by arrondissement and read by matching rendered capitals. The notebook prints `SIGMOID_ANOURE` (the first and second letters were a close call between L/A and Z/N, settled by hand), which the platform accepted. This task has no README yet.
-
 The Twins Separated at Birth [script](twins-separated-at-birth/main.py) finds pairs of monument photos that come from the same source photograph. It compares only images with the same aspect ratio and a different size, and calls a pair a duplicate when at least 45 SIFT keypoints match unambiguously (Lowe's ratio test). On the training archive it reaches F1 0.962 (precision 0.959, recall 0.966), and it passed the platform's hidden test (F1 >= 0.88 needed). It needs `opencv-python` in addition to `requirements.txt`. See the [task README](twins-separated-at-birth/README.md) for the approach, the threshold choice and reproduction steps.
 
 The Bad BOMB [notebook](bad-bomb/solve.ipynb) finds 28 defective artillery shells among 1,225 unlabelled photos with PatchCore-style anomaly detection: a frozen WideResNet-50 describes every patch, only patches on the shell are scored against the 40 most similar photos, and the top of the ranking was reviewed by eye. The platform matched 20 of the 28 (accuracy 0.714, 0.70 needed). The [task README](bad-bomb/README.md) records the attempts, the defect types and reproduction steps.
@@ -61,6 +59,8 @@ The Abidjan Transit Ledger [script](the-abidjan-transit-ledger/main.py) recovers
 The Always Valid, No Excuses [script](always-valid-no-excuses1/main.py) turns OCR'd record cards into strictly valid JSON with a small local model (Qwen3-1.7B through llama.cpp). Python first drops the scan noise and keeps only real `key: value` fields; the model then writes the JSON under a grammar built per card, so invalid JSON, wrong keys and quoted numbers cannot be generated. Every answer is checked against the conversion rules and corrected on a mismatch, because 99/100 scores zero. A local check found all 100 test cards valid. It needs `huggingface-hub` and `llama-cpp-python` in its own environment. The [task README](always-valid-no-excuses1/README.md) records the attempts and reproduction steps. The submission passed on the platform.
 
 The Gángan Never Lies [notebook](the-gangan-never-lies/solve.ipynb) draws the spectrogram (frequency over time) of a recording that sounds like a flat hiss. The saved [spectrogram](the-gangan-never-lies/figures/spectrogram.png) shows the word TALKINGDRUM written on top of the noise, which gives `SIGMOID_TALKINGDRUM`. It needs `scipy` in addition to `requirements.txt`. The [task README](the-gangan-never-lies/README.md) explains why the word is visible and records reproduction steps. The platform accepted the flag.
+
+Walu Season [script](walu-season/main.py) treats ten fishing spots as a multi-armed bandit. The strategy adds an exploration bonus to each spot's average catch and scored 6,944.6 kg per day across 100 practice days, above the 5,300 kg threshold. See the [task README](walu-season/README.md) for reproduction steps.
 
 ## Team rules
 
